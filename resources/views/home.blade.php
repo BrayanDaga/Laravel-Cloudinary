@@ -39,8 +39,21 @@
            </div>
        </div>
    </div>
+
+   <div class="row" id="displayImages">
+    @if($images)
+        @foreach($images as $image)
+
+            <div class="col-md-3">
+                <a href="{{$image->image_url}}" target="_blank">
+                    <img src="{{asset('uploads/'.$image->image_name)}}" class="img-responsive" alt="{{$image->image_name}}">
+                </a>
+            </div>
+        @endforeach
+    @endif
 </div>
 
+</div>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
@@ -55,6 +68,9 @@
         </div>
     </div>
  </nav>
+
+
+
 
 </body>
 </html>
